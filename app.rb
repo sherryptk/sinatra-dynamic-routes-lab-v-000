@@ -37,7 +37,7 @@ class App < Sinatra::Base
     @result =  params[:number1].to_i params[:operation].to_sym params[:number2].to_i
     "#{@result}"
   end
-  
+
 
 
 end
