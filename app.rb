@@ -31,11 +31,25 @@ class App < Sinatra::Base
   end
 
   get "/:operation/:number1/:number2" do
-    # @operation = params[:operation]
-    # @number1 = params[:number1].to_i
-    # @number2 = params[:number2].to_i
-    @result =  params[:number1].to_i params[:operation].to_sym params[:number2].to_i
-    "#{@result}"
+    @operation = params[:operation]
+    @number1 = params[:number1].to_i
+    @number2 = params[:number2].to_i
+    # @result =  params[:number1].to_i params[:operation].to_sym params[:number2].to_i
+    # "#{@result}"
+    if @operation == "add"
+      @result = @number1 + @number2
+      "#{@result}"
+    elsif @operation == "subtract"
+      @result = @number1 - @number2
+      "#{@result}"
+    elsif @operations == "multipy"
+      @result = @number1 * @number2
+      "#{@result}"
+    else
+      @result = @number1 / @number2
+      "#{@result}"
+    end
+      
   end
 
 
